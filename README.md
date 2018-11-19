@@ -45,11 +45,11 @@ You will need polyfills bundled in `dist/polyfills.js`, it included:
 	alt="[and use alt as normal <img> element do]"
 	data="https://github.com/eky/custom-element-qr-code-image"
 	size="300"
-	colorlight="#ffe7efff"
 	colordark="#bb61a0ff"
+	colorlight="#ffe7efff"
+	errorcorrectionlevel="H"
 	cover="pig.svg"
 	coversize="150"
-	errorcorrectionlevel="H"
 />
 ```
 ![Fancy QR code](https://raw.githubusercontent.com/eky/custom-element-qr-code-image/master/docs/fancy-code.png)
@@ -68,9 +68,9 @@ The data of QR code, no default value.
 ### colorlight
 [node-qrcode](https://github.com/soldair/node-qrcode#colorlight) `color.light` option, default as `#ffffffff`.
 ### errorcorrectionlevel
-[node-qrcode](https://github.com/soldair/node-qrcode#errorcorrectionlevel) option, default as `M`.
+[node-qrcode](https://github.com/soldair/node-qrcode#errorcorrectionlevel) `errorCorrectionLevel` option, default as `M`.
 ### cover
-The URL of image cover on the QR code, no default value. Strongly recommend to set `errorcorrectionlevel` as `H` or `M` when there is a cover on QR code.
+The URL of image cover on the QR code, no default value. Strongly recommend to set `errorcorrectionlevel` as `H` or `Q` when there is a cover on QR code.
 ### coversize
 The larger size of width and height, default as `size * 0.4`.
 
