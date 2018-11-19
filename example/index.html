@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Example</title>
+		<style>
+			html,
+			body {
+				box-sizing: border-box;
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+				height: 100%;
+				margin: 0;
+				font: 16px sans-serif;
+			}
+
+			body {
+				padding: 1em;
+			}
+
+			form {
+				padding: 2em;
+			}
+
+			label {
+				display: block;
+				margin: .5em 0;
+			}
+
+			input[name="range"]::after {
+				content: attr(value);
+				display: inline-block;
+			}
+
+		</style>
+	</head>
+	<body>
+		<form>
+			<fieldset>
+				<label>
+					Data:
+					<textarea name="data" cols="30" rows="3">https://github.com/eky/custom-element-qr-code-image</textarea>
+				</label>
+				<label>
+					Size:
+					<input type="range" name="size" value="300" min="100" max="600" />
+				</label>
+				<label>
+					Color light:
+					<input type="color" name="colorlight" value="#ffe7ef" />
+				</label>
+				<label>
+					Color dark:
+					<input type="color" name="colordark" value="#bb61a0" />
+				</label>
+				<label>
+					Cover:
+					<input type="file" name="cover" />
+				</label>
+				<label>
+					Cover size:
+					<input type="range" name="coversize" value="150" min="0" max="300" />
+				</label>
+				<label>
+					Error correction level:
+					<select type="range" name="errorcorrectionlevel">
+						<option value="L">L</option>
+						<option value="M">M</option>
+						<option value="Q">Q</option>
+						<option value="H" selected>H</option>
+					</select>
+				</label>
+			</fieldset>
+		</form>
+
+		<img
+			is="qr-code-image"
+			data="https://github.com/eky/custom-element-qr-code-image"
+			size="300"
+			colorlight="#ffe7efff"
+			colordark="#bb61a0ff"
+			cover="pig.svg"
+			coversize="150"
+			errorcorrectionlevel="H"
+		/>
+
+		<script src="../dist/polyfills.js"></script>
+		<script src="../dist/custom-element-qr-code-image.js"></script>
+		<script src="main.js"></script>
+	</body>
+</html>

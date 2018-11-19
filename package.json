@@ -1,0 +1,45 @@
+{
+  "name": "custom-element-qr-code-image",
+  "version": "1.0.0",
+  "description": "A custom element of QR code image with cover image feature.",
+  "main": "dist/custom-element-qr-code-image.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development webpack-dev-server --content-base=./ --open --open-page=example/ --inline --watch --hot",
+    "build": "cross-env NODE_ENV=production webpack --watch"
+  },
+  "keywords": [
+    "qrcode",
+    "custom",
+    "element",
+    "webcomponents"
+  ],
+  "author": "Eky Kwan <eky@eky.hk>",
+  "homepage": "https://github.com/eky/custom-element-qr-code-image#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eky/custom-element-qr-code-image"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "@babel/runtime": "^7.1.5",
+    "@babel/runtime-corejs2": "^7.1.5",
+    "@webcomponents/webcomponentsjs": "^2.1.3",
+    "built-in-element": "^0.2.0",
+    "document-register-element": "^1.13.1",
+    "qrcode": "^1.3.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.0",
+    "@babel/plugin-transform-runtime": "^7.1.0",
+    "@babel/preset-env": "^7.1.5",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.4",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.9.0",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  }
+}
