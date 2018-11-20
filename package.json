@@ -1,6 +1,6 @@
 {
   "name": "custom-element-qr-code-image",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "A custom element of QR code image with cover image feature.",
   "main": "dist/custom-element-qr-code-image.js",
   "scripts": {

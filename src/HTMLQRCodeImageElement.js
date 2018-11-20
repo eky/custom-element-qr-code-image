@@ -8,15 +8,15 @@ export default class HTMLQRCodeImageElement extends HTMLImageElement {
 
 	static get defaultAttributes() {
 		return {
-			data: false,
-			size: 200,
-			margin: 0,
-			scale: 4,
+			data: null,
+			size: '200',
+			margin: '0',
+			scale: '4',
 			colordark: '#000000ff',
 			colorlight: '#ffffffff',
 			errorcorrectionlevel: 'M', // L / M / Q / H
-			cover: false,
-			coversize: false,
+			cover: null,
+			coversize: null,
 		};
 	}
 
@@ -26,7 +26,7 @@ export default class HTMLQRCodeImageElement extends HTMLImageElement {
 
 	connectedCallback() {
 		if (!this.isInitialized) {
-			this._defineDefaultAttributes(HTMLQRCodeImageElement.defaultAttributes);
+			this._assignDefaultAttributes(HTMLQRCodeImageElement.defaultAttributes);
 
 			this.render();
 			this.isInitialized = true;
@@ -39,26 +39,18 @@ export default class HTMLQRCodeImageElement extends HTMLImageElement {
 		}
 	}
 
-	_defineDefaultAttributes(defaultAttributes) {
-		// Assign default attributes
+	_assignDefaultAttributes(defaultAttributes) {
 		const defaults = defaultAttributes;
 		Object.keys(defaults).map(key => {
 			const attribute = this.getAttribute(key);
-			if (attribute === null) {
-				let value = defaults[key];
-				if (
-					// Element.attrbute only accept strings
-					value === true ||
-					// Attribute with no value is boolean true
-					// eg. <video autoplay loop muted />
-					value === null
-				) {
-					value = key;
-				}
-
-				if (value !== false) {
-					this.setAttribute(key, value);
-				}
+			if (
+				(
+					attribute === null ||
+					attribute === ''
+				) &&
+				defaults[key] !== null
+			) {
+				this.setAttribute(key, defaults[key]);
 			}
 		});
 	}
