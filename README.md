@@ -17,7 +17,7 @@ Until Nov 2018, Only Chrome and Firefox 63+ (released Oct 23, 2018) support [`Cu
 
 You will need polyfills bundled in `dist/polyfills.js`, it included:
 * [`@babel/polyfill`](https://babeljs.io/docs/en/babel-polyfill)
-* [`webcomponentsjs`](https://github.com/webcomponents/webcomponentsjs)
+* [`@webcomponents/webcomponentsjs`](https://github.com/webcomponents/webcomponentsjs)
 * [`document-register-element`](https://github.com/WebReflection/document-register-element)
 * [`built-in-element`](https://github.com/WebReflection/built-in-element)
   - Use `test/es5/min.js` if you need to support IE (*IE*, not Edge)

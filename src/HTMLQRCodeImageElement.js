@@ -85,10 +85,10 @@ export default class HTMLQRCodeImageElement extends HTMLImageElement {
 		try {
 			// Wait for cover image is loaded
 			await new Promise((resolve, reject) => {
-				image.src = cover;
-				if (image.complete) resolve(image);
 				image.onload = () => resolve(image);
 				image.onerror = reject;
+				image.src = cover;
+				if (image.complete) resolve(image);
 			});
 
 			// Get the larger width / height and set smaller one in ratio
