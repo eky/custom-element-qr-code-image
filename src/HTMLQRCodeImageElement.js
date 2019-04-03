@@ -162,7 +162,7 @@ export default class HTMLQRCodeImageElement extends HTMLCustomImageElement {
 				// Fill to image source
 				target.src = canvas.toDataURL();
 
-				// this._dispatchGeneratedEvent();
+				this._dispatchGeneratedEvent();
 			} catch (error) {
 				console.error(error);
 			}
