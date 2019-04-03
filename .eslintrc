@@ -118,7 +118,8 @@
 		"yoda":2,
 		"indent":[
 			"error",
-			"tab"
+			"tab",
+			{ "SwitchCase": 1 }
 		],
 		"brace-style":[
 			2,
