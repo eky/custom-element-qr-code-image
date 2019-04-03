@@ -17,9 +17,8 @@ Until Nov 2018, Only Chrome and Firefox 63+ (released Oct 23, 2018) support [`Cu
 
 You will need polyfills bundled in `dist/polyfills.js`, it included:
 * [`@babel/polyfill`](https://babeljs.io/docs/en/babel-polyfill)
-* [`@webcomponents/webcomponentsjs`](https://github.com/webcomponents/webcomponentsjs)
 * [`document-register-element`](https://github.com/WebReflection/document-register-element)
-* [`built-in-element`](https://github.com/WebReflection/built-in-element)
+* [`@ungap/custom-elements-builtin`](https://github.com/ungap/custom-elements-builtin)
   - Use `test/es5/min.js` if you need to support IE (*IE*, not Edge)
 
 ## Usage
@@ -48,7 +47,7 @@ You will need polyfills bundled in `dist/polyfills.js`, it included:
 	colordark="#bb61a0ff"
 	colorlight="#ffe7efff"
 	errorcorrectionlevel="H"
-	cover="pig.svg"
+	cover="pig.png"
 	coversize="150"
 />
 ```
@@ -86,7 +85,7 @@ document.querySelector('[is="qr-code-image"]')
 ```
 
 ## License
-[MIT](https://github.com/eky/element-visibility-observer/blob/master/LICENSE)
+[MIT](https://github.com/eky/custom-element-qr-code-image/blob/master/LICENSE)
 
 The word "QR Code" is registered trademark of:<br>
 DENSO WAVE INCORPORATED
