@@ -1,8 +1,11 @@
 import { toCanvas as qrCodeToCanvas } from 'qrcode';
 
-export default class HTMLQRCodeImageElement extends HTMLImageElement {
-	constructor() {
-		super();
+class HTMLCustomImageElement extends HTMLImageElement {
+	constructor(...$) { const _ = super(...$); _.init(); return _; }
+}
+
+export default class HTMLQRCodeImageElement extends HTMLCustomImageElement {
+	init() {
 		this.isInitialized = false;
 	}
 
@@ -34,7 +37,7 @@ export default class HTMLQRCodeImageElement extends HTMLImageElement {
 	}
 
 	attributeChangedCallback(name, oldValue, newValue) {
-		if (this.isInitialized && this.isConnected && newValue !== null) {
+		if (this.isInitialized && newValue !== null) {
 			this.render();
 		}
 	}
@@ -159,7 +162,7 @@ export default class HTMLQRCodeImageElement extends HTMLImageElement {
 				// Fill to image source
 				target.src = canvas.toDataURL();
 
-				this._dispatchGeneratedEvent();
+				// this._dispatchGeneratedEvent();
 			} catch (error) {
 				console.error(error);
 			}
